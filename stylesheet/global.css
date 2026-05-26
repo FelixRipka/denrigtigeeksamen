@@ -5,7 +5,6 @@
 body {
     margin: 0;
     background-color: #12100E;
-    
 }
 
 /* NAVBAR */
@@ -17,18 +16,7 @@ body {
     align-items: center;
 }
 
-
-
-
-.navbar__logo {
-    height: 50px;
-    width: auto;
-    display: block;
-    margin-left: 40px;
-}
-
-
-
+/* UL + logo */
 .navbar ul {
     display: flex;
     gap: 40px;
@@ -37,8 +25,15 @@ body {
     padding: 0;
     align-items: center;
     height: 100%;
+    margin-left: 40px; /* ← giver luft mellem logo og links på desktop */
 }
 
+.navbar__logo {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-left: 40px;
+}
 
 .navbar a {
     text-decoration: none;
@@ -46,15 +41,6 @@ body {
     font-family: "red rose", sans-serif;
     font-size: 24px;
 }
-
-.navbar a {
-    text-decoration: none;
-    color: #12100E;
-    font-family: "red rose", sans-serif;
-    font-size: 24px;
-}
-
-
 
 /* HERO */
 .hero__banner {
@@ -68,19 +54,15 @@ body {
     overflow: hidden;
 }
 
-/* LOGO ALWAYS ON TOP, CENTERED */
 .hero__logo {
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
     width: 120px;
-    max-width: none;
-    min-width: 0;
     z-index: 2;
 }
 
-/* TEXT ALWAYS CENTERED UNDER LOGO */
 .hero__text {
     position: absolute;
     top: 55%;
@@ -98,15 +80,12 @@ body {
     margin: 0;
 }
 
-
-
 /* LAYOUT */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
 }
-
 
 .homepage-section {
     padding-top: 80px;
@@ -115,16 +94,13 @@ body {
 /* PAGE BANNER */
 .page-banner {
     background: linear-gradient(
-    to bottom,
-    #12100E 0%,
-    #496F5D 100%
-);
-
-    padding: 80px 0; /* ⭐ spacing handled here */
-    margin-top: 0;   /* ⭐ remove extra gap above banner */
-    
+        to bottom,
+        #12100E 0%,
+        #496F5D 100%
+    );
+    padding: 80px 0;
+    margin-top: 0;
 }
-
 
 .page-banner__content {
     text-align: center;
@@ -162,13 +138,10 @@ body {
 }
 
 .page-banner__button:hover {
-
     transform: scale(1.06);
     box-shadow: 0 12px 28px #496F5D;
-
 }
 
-/* CONTACT PAGE BANNER (modifier) */
 .page-banner--contact .page-banner__button {
     display: none;
 }
@@ -178,12 +151,6 @@ body {
     font-size: 18px;
     font-family: "lexend exa", sans-serif;
     margin-top: 20px;
-}
-
-
-/* FOOTER */
-.site-footer {
-    height: 120px;
 }
 
 /* FOOTER */
@@ -199,7 +166,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-left: 40px; /* matcher navbarens logo-margin */
+    margin-left: 40px;
 }
 
 .footer__logo {
@@ -214,16 +181,78 @@ body {
     text-decoration: none;
 }
 
-/*responsive navbar */
+/* BURGER – skjult som default */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.burger span {
+    width: 28px;
+    height: 3px;
+    background-color: #12100E;
+    display: block;
+    transition: 0.3s ease;
+}
+
+/* MOBIL BURGERMENU */
 @media (max-width: 700px) {
-    .navbar ul {
-        gap: 20px;
-        padding-left: 20px;
+
+    .burger {
+        display: flex;
     }
 
-    .navbar a {
-        font-size: 18px;
+    .navbar {
+        justify-content: space-between;
+        padding: 0 10px;
     }
+
+    .navbar ul {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background-color: #cacaca;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 2px solid rgb(192, 192, 192);
+        display: none;
+        z-index: 9999;
+
+        max-height: 50vh;
+        overflow-y: auto;
+        margin-left: 0; /* ← vigtigt: ingen desktop-margin i mobil */
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .navbar ul li a:hover {
+        transform: scale(1.03);
+        text-shadow: 0 12px 28px #496F5D;
+        transition: 0.25s ease;
+    }
+}
+
+/* Burger animation */
+.burger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* RESPONSIVE PAGE BANNER */
@@ -247,5 +276,3 @@ body {
         padding: 40px 0;
     }
 }
-
-

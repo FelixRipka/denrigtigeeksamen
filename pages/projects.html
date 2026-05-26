@@ -16,17 +16,25 @@
 <body>
 
     <div class="navbar">
-        <ul>
-            <li>
-                <a href="../index.html">
-                    <img src="../files/logo.png" alt="Home Logo" class="navbar__logo">
-                </a>
-            </li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about-me.html">About</a></li>
-        </ul>
-    </div>
+
+    <a href="../index.html">
+        <img src="../files/logo.png" alt="Home Logo" class="navbar__logo">
+    </a>
+
+    <button class="burger" id="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <ul id="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about-me.html">About</a></li>
+    </ul>
+
+</div>
+
 
     <section class="hero__banner">
         <div class="hero__text">
@@ -111,6 +119,16 @@
         <a href="mailto:fdjursaa@gmail.com" class="footer__email">fdjursaa@gmail.com</a>
     </div>
 </footer>
+
+<script>
+    const burger = document.getElementById("burger-btn");
+    const nav = document.getElementById("nav-links");
+
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        nav.classList.toggle("show");
+    });
+</script>
 
 </body>
 </html>
