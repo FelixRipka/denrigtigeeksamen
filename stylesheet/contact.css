@@ -1,0 +1,75 @@
+/* LAYOUT WRAPPER */
+.contact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 240px; /* increased spacing */
+    margin-top: 80px;
+}
+
+
+/* CONTACT FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+}
+
+/* LABELS */
+.contact-form label {
+    font-family: "Red Rose", sans-serif;
+    font-size: 14px;
+    color: #cacaca;
+}
+
+/* INPUTS + TEXTAREA */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid rgb(180, 180, 180);
+    background-color: rgb(220, 215, 215);
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: "Red Rose", sans-serif;
+    pointer-events: auto; /* allows clicking */
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 14px;
+    background-color: #776472;
+    border: 2px solid #cacaca;
+    font-family: "Red Rose", sans-serif;
+    font-size: 16px;
+    cursor: pointer; /* nu kan man klikke */
+    transition: 0.2s ease;
+}
+
+.contact-form button:hover {
+      transform: scale(1.06);
+    box-shadow: 0 12px 28px #496F5D;
+}
+
+/* RESPONSIVE BEHAVIOR */
+@media (max-width: 900px) {
+    .contact-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .contact-logo {
+        height: 90px;
+    }
+}
+
+.contact-logo:first-of-type {
+    transform: scaleX(-1);
+}
+

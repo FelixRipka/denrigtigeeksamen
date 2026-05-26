@@ -1,0 +1,103 @@
+.mid-section {
+
+    padding: 80px 0;
+    
+}
+
+    
+
+.mid-section__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.mid-section__video {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* TEXT */
+.mid-section__text h2 {
+    font-family: "lexend zetta", sans-serif;
+    font-size: 26px;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #CACACA;
+}
+
+.mid-section__text p {
+    font-family: "lexend exa", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    text-align: left;
+    max-width: 600px;
+    color: #CACACA;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .mid-section__inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .mid-section__image {
+        order: -1; /* image on top */
+    }
+
+    .mid-section {
+        padding: 80px 0;
+    }
+}
+
+
+
+/* MY WORK LINK SECTION */
+.work-link {
+    padding: 80px 0;
+    text-align: center;
+    
+    
+}
+
+.work-link a {
+    font-family: "red rose", sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    color: #CACACA;      /* beholdt */
+    padding: 14px 32px;
+    display: inline-block;
+    transition: 0.25s ease;
+}
+
+
+
+.my-work-link {
+    font-family: "Red Rose", sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    color: #CACACA;
+    display: inline;   /* ← FIX: kun så bred som teksten */
+    text-align: left;
+    margin-top: 20px;
+    transition: 0.25s ease;
+    padding: 0;;
+}
+
+.my-work-link:hover {
+    transform: scale(1.06);
+    text-shadow: 0 12px 28px #496F5D;
+}

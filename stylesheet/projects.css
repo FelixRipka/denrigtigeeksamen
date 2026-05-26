@@ -1,0 +1,92 @@
+/* PROJECT PAGE CARD LAYOUT */
+
+.projects-section {
+    padding: 80px 0; /* ⭐ symmetrical spacing above and below cards */
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding: 0 40px;
+}
+
+/* CARD */
+.card {
+    background: linear-gradient(135deg, #776472, #12100E);
+
+    border: 1px solid #776472;
+    display: grid;
+    grid-template-areas:
+        "title"
+        "image"
+        "description";
+    margin: 0 auto;
+    overflow: hidden;
+
+    /* ⭐ added for hover animation */
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ⭐ HOVER EFFECT (added back exactly as before) */
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 28px #496F5D;
+}
+
+/* TITLE */
+.card__title {
+    grid-area: title;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 16px 0;
+    justify-self: center;
+    font-family: "red rose", sans-serif;
+    color: #CACACA;
+}
+
+/* IMAGE — ALWAYS SQUARE */
+.card__image {
+    grid-area: image;
+    width: 100%;
+    max-width: 600px;   /* ⭐ never larger than 600px */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;     /* ⭐ centers the image in the card */
+}
+
+/* DESCRIPTION */
+.card__description {
+    grid-area: description;
+    font-size: 18px;
+    font-family: "lexend exa", sans-serif;
+    font-weight: 600;
+    margin: 12px 0;
+    padding: 12px 24px;
+    color: #CACACA;
+}
+
+
+
+
+/* RESPONSIVE CARDS */
+@media (max-width: 700px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .card__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
