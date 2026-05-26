@@ -2,7 +2,7 @@
     padding: 80px 0;
 }
 
-/* MATCHER mid-section__inner */
+/* MAIN WRAPPER */
 .about__inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,4 +60,47 @@
 .about__text p:last-of-type {
     margin-top: 32px;
     font-style: italic;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE BREAKPOINTS       */
+/* ----------------------------- */
+
+/* TABLET */
+@media (max-width: 1100px) {
+    .about__inner {
+        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about__text {
+        max-width: 480px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .about__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .about__image-wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .about__text {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .about__text h1 {
+        font-size: 22px;
+    }
+
+    .about__text p {
+        font-size: 18px;
+    }
 }
